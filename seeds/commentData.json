@@ -1,0 +1,62 @@
+[
+    {
+        "content": "Man, I wish I was biff",
+        "user_id": 3,
+        "blog_id": 1
+    },
+    {
+        "content": "Biff sure does love his food",
+        "user_id": 2,
+        "blog_id": 1
+    },
+    {
+        "content": "Exactly! I love food",
+        "user_id": 1,
+        "blog_id": 1
+    },
+    {
+        "content": "Now that explains why history is so messed up",
+        "user_id": 2,
+        "blog_id": 2
+    },
+    {
+        "content": "This can't be real",
+        "user_id": 3,
+        "blog_id": 2
+    },
+    {
+        "content": "Oh its real alright",
+        "user_id": 1,
+        "blog_id": 2
+    },
+    {
+        "content": "Download link?",
+        "user_id": 1,
+        "blog_id": 3
+    },
+    {
+        "content": "Man, this isn't even real",
+        "user_id": 1,
+        "blog_id": 3
+    },
+    {
+        "content": "Lmao! You fell for click bait!",
+        "user_id": 3,
+        "blog_id": 3
+    },
+    {
+        "content": "SpaceX gonna clap the competition",
+        "user_id": 2,
+        "blog_id": 4
+    },
+    {
+        "content": "smh, no way man, China is gonna win",
+        "user_id": 1,
+        "blog_id": 4
+    },
+    {
+        "content": "I just wanna walk on mars",
+        "user_id": 3,
+        "blog_id": 4
+    }
+]

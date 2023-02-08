@@ -28,7 +28,7 @@ Comment.init(
       },
     },
     blog_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'blog',
         key: 'id'
@@ -39,9 +39,9 @@ Comment.init(
     hooks: {
       beforeCreate: async (comment, options) => {
         //gets new date object
-        let date = new Date.getDate();
+        let date = new Date();
         //sets the date created to the local time strin
-        comment.date_created = date.toLocalDateString();
+        comment.date_created = date.toLocaleDateString();
         return comment;
       }
     },

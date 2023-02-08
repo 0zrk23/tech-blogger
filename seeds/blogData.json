@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Big Biff Eats",
+    "content": "Food is so wonderfull and tastes amainzing when it is cooked to perfection",
+    "user_id": 1
+  },
+  {
+    "title": "Tech Company Creates Time Machine",
+    "content": "The tech company 'Notre Eal' created the worlds first time machine!",
+    "user_id": 1
+  },
+  {
+    "title": "Ideal Match",
+    "content": "Check out this app now! It can find you the perfect match just for you!",
+    "user_id": 2
+  },
+  {
+    "title": "Mars Race!",
+    "content": "Now that there is an established colony on mars, the world races to see who will be the first company to colonize mars!",
+    "user_id": 3
+  }
+]

@@ -21,7 +21,6 @@ Blog.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     user_id: {
@@ -36,9 +35,9 @@ Blog.init(
     hooks: {
       beforeCreate: async (blog, options) => {
         //gets new date object
-        let date = new Date.getDate();
+        let date = new Date();
         //sets the date created to the local time strin
-        blog.date_created = date.toLocalDateString();
+        blog.date_created = date.toLocaleDateString();
         return blog;
       }
     },
