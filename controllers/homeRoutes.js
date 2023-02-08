@@ -1,22 +1,14 @@
 const router = require('express').Router();
 const { Comment, Blog, User } = require('../models');
+const Sequelize = require('sequelize');
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
+    // console.log(sequelize.col('blog.user_id'))
     try{
         const blogData = await Blog.findAll({
-          attributes: {
-            include: [
-              [
-                // Use plain SQL to get a count of all short books
-                sequelize.literal(
-                  '(SELECT username FROM user WHERE user.id = blog.user_id)'
-                ),
-                'creator',
-              ],
-            ],
-          }
+          include: [{model: User}]
         });
         const blogs = blogData.map(blog => blog.get({plain: true}));
         console.log(blogs);
@@ -31,27 +23,26 @@ router.get('/', async (req,res) => {
     }
 })
 
-router.get('/project/:id', async (req, res) => {
-  try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const project = projectData.get({ plain: true });
-
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
+router.get('/blogs/:id', withAuth, async (req,res)=>{
+  try{
+      const blogData = await Blog.findByPk(req.params.id,{
+        include: [{
+          model: Comment,
+          include: [{
+            model: User
+          }]
+        }],
+      });
+      const blog = await blogData.get({plain: true});
+      console.log(blog);
+      res.render('blog',{
+        ...blog,
+        logged_in: req.session.logged_in,
+      })
   } catch (err) {
-    res.status(500).json(err);
+      res.status(400).json(err);
   }
-});
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

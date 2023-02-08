@@ -1,7 +1,15 @@
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      {{title}}
+<div class="card field container is-blog" data-blog="{{id}}">
+  <header class="card-header has-background-grey-light">
+    <a class="card-header-title column is-size-4 " href="/blogs/{{id}}">
+        {{title}}
+    </a>
+    <p class="is-right">
+        Created by {{user.username}} on {{format_date date_created}}
     </p>
   </header>
+  <div class="card-content">
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
 </div>
