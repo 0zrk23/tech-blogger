@@ -11,7 +11,6 @@ router.get('/', async (req,res) => {
           include: [{model: User}]
         });
         const blogs = blogData.map(blog => blog.get({plain: true}));
-        console.log(blogs);
         res.render('homepage', {
           blogs,
           logged_in: req.session.logged_in
@@ -26,15 +25,18 @@ router.get('/', async (req,res) => {
 router.get('/blogs/:id', withAuth, async (req,res)=>{
   try{
       const blogData = await Blog.findByPk(req.params.id,{
-        include: [{
-          model: Comment,
-          include: [{
+        include: [
+          {
             model: User
-          }]
-        }],
+          },
+          {
+            model: Comment,
+            include: [{
+              model: User
+            }]
+          }],
       });
       const blog = await blogData.get({plain: true});
-      console.log(blog);
       res.render('blog',{
         ...blog,
         logged_in: req.session.logged_in,
@@ -46,20 +48,28 @@ router.get('/blogs/:id', withAuth, async (req,res)=>{
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
-  // console.log('here');
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Blog }],
-    });
-
-    const user = userData.get({ plain: true });
-    console.log(user);
-    res.render('profile', {
+    console.log('here');
+    const blogData = await Blog.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    })
+    let blogs;
+    let noData;
+    if(!blogData[0]){
+      noData = true;
+    } else {
+      blogs = blogData.map(blog => blog.get({plain: true}));
+      noData = false;
+    }
+    res.render('profile',{
+      blogs,
+      noData: noData,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
