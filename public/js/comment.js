@@ -13,7 +13,8 @@ const commentFormHandler = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace(`/blogs/${blogId}`);
+            console.log(response);
+            window.location.reload();
         } else {
             alert(response.statusText);
         }

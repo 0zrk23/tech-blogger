@@ -1,1 +1,71 @@
-<p>Profile</p>
+<div class="">
+    <strong class="column is-size-3 has-text-centered is-half is-offset-one-quarter">Your Blogs</strong>
+</div>
+{{#if noData}}
+<div class="card field container is-blog" data-blog="{{id}}">
+  <div class="card-content">
+    <div class="content">
+      You haven't created any blogs yet
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="blog-list">
+{{#each blogs as |blog|}}
+<div class="card field container is-blog" data-blog="{{id}}">
+  <header class="card-header has-background-grey-light">
+    <p class="card-header-title column is-size-4">
+        {{title}}
+    </p>
+    <p class="is-right">
+        Created on {{format_date date_created}}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
+  <footer class="car-footer">
+    <form class="delete-form card-footer-item">
+        <button class="button is-danger is-outlined" data-delete-id='{{id}}'>
+            <span data-delete-id='{{id}}'>Delete</span>
+            <span class="icon is-small" data-delete-id='{{id}}'>
+                <i class="fas fa-times" data-delete-id='{{id}}'></i>
+            </span>
+        </button>
+    </form>
+  </footer>
+</div>
+{{/each}}
+</div>
+
+{{/if}}
+<div class="card field container is-comment" >
+  <header class="card-header has-background-grey-light">
+    <p class="card-header-title column is-size-5 ">
+        Add Blog
+    </p>
+  </header>
+  <form class="card-content blog-form">
+    <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+            <input class="input" type="text" id='title'placeholder="Title">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Content</label>
+        <div class="control">
+            <textarea class="textarea" id="content" placeholder="Content"></textarea>
+        </div>
+    </div>
+    <div class="control">
+      <button class="button has-background-grey-light">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/blog.js"></script>
+
+
