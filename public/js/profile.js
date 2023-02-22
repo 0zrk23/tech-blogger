@@ -31,26 +31,26 @@ document
 
 
 
-    const blogDeleteFormHandler = async (event) => {
-        event.preventDefault();
-        // alert('here');
-        if(event.target.hasAttribute('data-delete-id')){
-            const blogId = event.target.getAttribute('data-delete-id');
-            const response = await fetch(`/api/blogs/${blogId}`,
-            {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-            });
+const blogDeleteFormHandler = async (event) => {
+    event.preventDefault();
+    // alert('here');
+    if(event.target.hasAttribute('data-delete-id')){
+        const blogId = event.target.getAttribute('data-delete-id');
+        const response = await fetch(`/api/blogs/${blogId}`,
+        {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-            if(response.ok){
-                console.log(response);
-                window.location.reload();
-            } else {
-                alert(response.statusText);
-            }
+        if(response.ok){
+            console.log(response);
+            window.location.reload();
+        } else {
+            alert(response.statusText);
         }
     }
-    
-    document
-        .querySelector('.blog-list')
-        .addEventListener('click',blogDeleteFormHandler);
+}
+
+document
+    .querySelector('.blog-list')
+    .addEventListener('click',blogDeleteFormHandler);
