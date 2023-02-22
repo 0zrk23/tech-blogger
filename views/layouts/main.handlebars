@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blogger</title>
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="images/tech-blogger.png" width="112" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+
+        {{#if logged_in}}
+        <a class="navbar-item" href="/profile">
+          Profile
+        </a>
+        {{/if}}
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            {{#if logged_in}}
+              <a class="button is-light" id="logout">
+                Log Out
+              </a>
+            {{else}}
+              <a href="/signup" class="button has-background-grey-light">
+                <strong>Sign up</strong>
+              </a>
+              <a href="/login" class="button is-light">
+                Log in
+              </a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>  
+
+  {{{body}}}
+
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</body>
+
+</html>
