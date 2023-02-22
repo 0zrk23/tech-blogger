@@ -6,9 +6,9 @@ const sequelize = new Sequelize(
   process.env.MYSQLUSER,
   process.env.MYSQLPASSWORD,
   {
-    host: MYSQLHOST,
+    host: process.env.MYSQLHOST,
     dialect: 'mysql',
-    port: MYSQLPORT
+    port: process.env.MYSQLPORT
   }
 )
 
