@@ -1,0 +1,32 @@
+# Tech Blogger
+![MIT License](https://img.shields.io/github/license/0zrk23/readme-creator)
+<p align="center"><img src="https://via.placeholder.com/1794x1080.png?text=Coming+Soon!" alt="Coming Soon" style="box-sizing: border-box; width: 80%;"></p>
+
+## Description
+
+Welcome to Tech Blogger! This web app is a place where you can blog about cutting edge and bleeding edge technology and have a discussion with other users of this website! Tech Blogger was designed to be able to save and show many blogs and commnets as well as allow you to post blogs of your own! It uses Sequelize for the Database and Express-Handlebars for the routes and front end.
+
+## Table of Contents
+ - [Usage](#usage)
+ - [Credits](#credits)
+ - [License](#license)
+ - [Questions](#questions)
+
+## Usage
+
+To use this application, visit [Tech Blogger](tech-blogger-production.up.railway.app) to get started. When it loads, it will display all  of the current blogs that you can see and comment. You'll have to sign in or sign up to do anything though. Once signed in, it will direct to you your profile page that contains all of the blogs you have created so far. From there you can create or delete your very own blogs. You can also visit other user's blogs by going to the home page and clicking on any of them. You can add a comment here.
+
+## Credits
+
+Creator: Gustavo Carrillo
+
+## License
+
+This project is under the MIT License
+
+## Questions
+     
+If you want to contact me, please use the following
+
+ - [GitHub Profile](https://github.com/0zrk23)
+ - [Email](gus.carrillo1221@gmail.com)
