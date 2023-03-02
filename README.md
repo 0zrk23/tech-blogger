@@ -16,7 +16,11 @@ Welcome to Tech Blogger! This web app is a place where you can blog about cuttin
 
 ## Usage
 
-
+![tech-blogger-how-to.webm](./public/videos/tech-blogger-how-to.webm)
+<!-- <video controls>
+    <source src="/public/videos/tech-blogger-how-to.webm" type="video/webm">
+    <a href="/public/videos/tech-blogger-how-to.webm">WEBM</a>
+</video> -->
 
 To use this application, visit [Tech Blogger](tech-blogger-production.up.railway.app) to get started. When it loads, it will display all  of the current blogs that you can see and comment. You'll have to sign in or sign up to do anything though. Once signed in, it will direct to you your profile page that contains all of the blogs you have created so far. From there you can create or delete your very own blogs. You can also visit other user's blogs by going to the home page and clicking on any of them. You can add a comment here.
 
