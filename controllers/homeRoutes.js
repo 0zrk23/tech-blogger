@@ -49,7 +49,7 @@ router.get('/blogs/:id', withAuth, async (req,res)=>{
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    console.log('here');
+    // console.log('here');
     const blogData = await Blog.findAll({
       where: {
         user_id: req.session.user_id
