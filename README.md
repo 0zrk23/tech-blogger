@@ -16,9 +16,10 @@ Welcome to Tech Blogger! This web app is a place where you can blog about cuttin
 
 ## Usage
 
-![tech-blogger-how-to.webm](./public/videos/tech-blogger-how-to.webm)
+<iframe src="https://drive.google.com/file/d/1BCbOegH9BonY1yn0b9THG3i30eq9aQz0/preview" width="960" height="620" allow="autoplay"></iframe>
+<!-- ![tech-blogger-how-to.webm](https://drive.google.com/file/d/1BCbOegH9BonY1yn0b9THG3i30eq9aQz0/preview) -->
 <!-- <video controls>
-    <source src="/public/videos/tech-blogger-how-to.webm" type="video/webm">
+    <source src="https://drive.google.com/file/d/1BCbOegH9BonY1yn0b9THG3i30eq9aQz0/preview" type="video/webm">
     <a href="/public/videos/tech-blogger-how-to.webm">WEBM</a>
 </video> -->
 
